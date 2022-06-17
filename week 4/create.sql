@@ -1,15 +1,15 @@
 CREATE TABLE Clients (
-			id int PRIMARY KEY,
+	    id int PRIMARY KEY,
             name varchar(255) not null,
             email varchar(200) unique,
-			contact varchar(60) unique,
+	    contact varchar(60) unique,
             card_credentials varchar(60) not null unique,
             client_role_id int not null
 );
 CREATE TABLE Donuts (
-			id int PRIMARY KEY,
+	    id int PRIMARY KEY,
             name varchar(255) not null,
-			price int not null,
+	    price int not null,
             image longblob not null,
             description varchar(255) not null,
             ingredients json not null
@@ -17,14 +17,13 @@ CREATE TABLE Donuts (
 CREATE TABLE Order_Statuses (    
             id int PRIMARY KEY, 
             status_name varchar(60) not null 
-    
 );
 CREATE TABLE Client_Roles (
-			id int PRIMARY KEY,
+	    id int PRIMARY KEY,
             role_name varchar(60) not null
 );
 CREATE TABLE Orders (
-			id int PRIMARY KEY,
+	    id int PRIMARY KEY,
             all_donuts json not null,
             order_price int not null,
             address varchar(200) not null,
@@ -32,6 +31,11 @@ CREATE TABLE Orders (
             order_status_id int not null,
             client_id int not null
 );
+
+ALTER TABLE clients ADD FOREIGN KEY (client_role_id) REFERENCES client_roles(id);
+ALTER TABLE orders ADD FOREIGN KEY (order_status_id) REFERENCES order_statuses(id);
+ALTER TABLE orders ADD FOREIGN KEY (client_id) REFERENCES clients(id);
+
 
 
 
