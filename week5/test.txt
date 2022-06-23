@@ -1,0 +1,7 @@
+1.Created Maven project
+2.Added mysql-connector to pom.xml
+3.Created DB 
+4.Created tables 
+5.Created class
+6.Worked with CRUD statements 
+6.Made sure that everything is works fine.
