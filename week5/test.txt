@@ -4,4 +4,4 @@
 4.Created tables 
 5.Created class
 6.Worked with CRUD statements 
-6.Made sure that everything is works fine.
+6.Made sure that everything works fine.
